@@ -21,6 +21,16 @@ Streamline your entire GitHub project lifecycle from issue creation to merge:
 - Automated PR creation and review
 - Git worktree isolation for safe development
 
+| Workflow Stage | Description | Components | Related Plugin Components |
+|---|---|---|---|
+| Create Repository | Initialize and configure new GitHub repository | • `/gh-repo` command ⚙️ | |
+| Create Issue | Create structured GitHub issues with templates and labels | • `/gh-issue` command ⚙️ | • `/feature-dev` (Phase 1: Discovery) 🔗 |
+| Plan Implementation | Develop detailed implementation plans with options analysis | • `/gh-plan` command ⚙️ | • `/feature-dev` (Phases 2-4: Exploration, Questions, Architecture Design) 🔗 |
+| Build Code | Autonomous code building from approved implementation plans | • `gh-build` agent ⚙️ | • `/feature-dev` (Phase 5: Implementation) 🔗<br>• `/commit` command 🔗<br>• `/commit-push-pr` command 🔗 |
+| Review Changes | Interactive code review and implementation guidance | • `/gh-review` command ⚙️ | • `/code-review` command 🔗<br>• `/feature-dev` (Phase 6: Quality Review) 🔗<br>• PR Review Toolkit (6 agents) 🔗 |
+| Merge & Cleanup | Automatically merge PRs, clean branches and worktrees, close issues | • `gh-merge` agent ⚙️ | • `/clean_gone` command 🔗 |
+| Maintenance | Continuous monitoring of repository health, stale items, and workflow synchronization | • `gh-maintenance` agent ⚙️ | • `/code-review` command 🔗<br>• PR Review Toolkit 🔗 |
+
 ### Obsidian Workflow Plugin
 Enhance your knowledge management with PARA and Zettelkasten workflows:
 
@@ -31,15 +41,6 @@ Enhance your knowledge management with PARA and Zettelkasten workflows:
 
 **Coming Soon:** Full Obsidian integration suite
 
-## Development Roadmap
-
-| Component | Plugin | Description | Status |
-|-----------|---------|-------------|--------|
-| `command` | `github-workflow` | `/gh-issue`: Create structured GitHub issues | In Development |
-| `command` | `github-workflow` | `/gh-plan`: Develop implementation plans | In Development |
-| `agent` | `github-workflow` | `gh-build`: Autonomous code building | In Development |
-| `command` | `github-workflow` | `/gh-review`: Interactive code review | In Development |
-| `plugin` | `obsidian-workflow` | PARA/Zettelkasten workflow tools | Planned |
 
 ## Installation
 
