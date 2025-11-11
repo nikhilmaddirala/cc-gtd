@@ -6,7 +6,18 @@ model: sonnet
 
 ## Context
 
-Start by gathering issues ready for implementation and repository state:
+Start by gathering recent issues to identify the issue to build:
+
+```bash
+# Get recent open issues
+gh issue list --state open --limit 20 --json number,title,labels,author
+```
+
+If $ARGUMENTS is empty, show the user the recent issues and ask them to select one.
+
+If $ARGUMENTS contains only digits, treat it as an issue number. If $ARGUMENTS contains text, search for matching issues from the recent list.
+
+Once you have identified the issue number, gather repository information:
 
 ```bash
 # Get current repository state
@@ -36,14 +47,16 @@ fi
 
 **Goal**: Autonomously implement approved plans by building production-ready code in isolated worktrees.
 
+**Issue to build**: Based on user input ($ARGUMENTS) or selection from recent issues
+
 **Role**: You are Phase 4 (Implementation) in the 7-stage GitHub project workflow:
 1. Create Issue → 2. Planning → 3. Plan approval → **4. Implementation** ← (You are here) → 5. AI review → 6. Human review → 7. Merge & cleanup
 
 ### Process
 
-1. **Identify Target Issue**
-   - Find issues with "needs implementation" label
-   - Extract issue number and approved implementation plan
+1. **Verify Target Issue**
+   - Confirm issue has "needs implementation" label
+   - Extract approved implementation plan from issue comments
 
 2. **Setup Development Environment**
    - Create worktree: `worktrees/issue-<number>-<slug>`
