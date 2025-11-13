@@ -5,10 +5,10 @@
   "author": "Nikhil Maddirala",
   "plugins": [
     {
-      "id": "github-code",
+      "id": "github-workflow",
       "name": "GitHub Workflow Plugin",
       "description": "Autonomous GitHub workflow automation with issue planning, code building, review coordination, and merge management",
-      "path": "plugins/github-code"
+      "path": "plugins/github-workflow"
     },
     {
       "id": "obsidian-workflow",

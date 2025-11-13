@@ -8,7 +8,7 @@ A comprehensive GTD (Getting Things Done) implementation for Claude Code, provid
 
 | Plugin name | Description | Development status |
 |---|---|---|
-| GitHub Workflow Plugin | Streamline your entire GitHub project lifecycle from issue creation to merge. See [plugins/github-code/README.md](plugins/github-code/README.md) for detailed workflow stages, state transitions, and implementation specifications. | Partially completed |
+| GitHub Workflow Plugin | Streamline your entire GitHub project lifecycle from issue creation to merge. See [plugins/github-workflow/README.md](plugins/github-workflow/README.md) for detailed workflow stages, state transitions, and implementation specifications. | Partially completed |
 | Obsidian Workflow Plugin | Enhance your knowledge management with PARA and Zettelkasten workflows. | Coming soon |
 
 
@@ -64,7 +64,7 @@ After adding the marketplace, install specific plugins:
 
 The project is organized as a marketplace with multiple focused plugins:
 
-- `plugins/github-code/` - GitHub workflow automation with commands, agents, and skills
+- `plugins/github-workflow/` - GitHub workflow automation with commands, agents, and skills
 - `plugins/obsidian-workflow/` - Obsidian integration for knowledge management (in development)
 - `.claude-plugin/` - Marketplace configuration
 - `references/docs/` - Reference documentation
