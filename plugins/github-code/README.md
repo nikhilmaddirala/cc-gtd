@@ -2,6 +2,9 @@
 
 Streamline your development process with AI-powered automation and human oversight. This workflow transforms GitHub Issues into a structured development pipeline, ensuring quality code through systematic planning, implementation, and review stages.
 
+## TODOs
+- Write workflow table with better structure
+- Write lifecycle of issues and PRs (decide if plan goes in issue or PR)
 
 ## Architecture Overview
 
