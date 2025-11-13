@@ -1,6 +1,6 @@
 # Obsidian Workflow Plugin
 
-This plugin provides integration between cc-gtd and Obsidian for comprehensive task management and knowledge capture.
+This plugin provides integration between gtd-cc and Obsidian for comprehensive task management and knowledge capture.
 
 ## Status
 
@@ -19,7 +19,7 @@ This plugin is currently in planning phase. Future development will include:
 ## Skills
 
 ### Obsidian Workflow Skill
-Located in `skills/obsidian-workflow/`, this skill provides:
+Located in `skills/obsidian/`, this skill provides:
 - Obsidian API interaction patterns
 - Note management and organization
 - Tag and link management

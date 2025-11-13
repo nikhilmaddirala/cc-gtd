@@ -1,4 +1,4 @@
-# cc-gtd - Getting Things Done with Claude Code
+# gtd-cc - Getting Things Done with Claude Code
 
 ## Overview
 
@@ -8,7 +8,7 @@ A comprehensive GTD (Getting Things Done) implementation for Claude Code, provid
 
 | Plugin name | Description | Development status |
 |---|---|---|
-| GitHub Workflow Plugin | Streamline your entire GitHub project lifecycle from issue creation to merge. See [plugins/github-code/README.md](plugins/github-code/README.md) for detailed workflow stages, state transitions, and implementation specifications. | Scaffolding |
+| GitHub Workflow Plugin | Streamline your entire GitHub project lifecycle from issue creation to merge. See [plugins/github/README.md](plugins/github/README.md) for detailed workflow stages, state transitions, and implementation specifications. | Scaffolding |
 | Obsidian Workflow Plugin | Enhance your knowledge management with PARA and Zettelkasten workflows. | Scaffolding |
 
 
@@ -19,7 +19,7 @@ A comprehensive GTD (Getting Things Done) implementation for Claude Code, provid
 Add this marketplace to Claude Code:
 
 ```bash
-/plugin marketplace add nikhilmaddirala/cc-gtd
+/plugin marketplace add nikhilmaddirala/gtd-cc
 ```
 
 ### Install Individual Plugins
@@ -28,10 +28,10 @@ After adding the marketplace, install specific plugins:
 
 ```bash
 # GitHub workflow tools
-/plugin install github-workflow@cc-gtd
+/plugin install github@gtd-cc
 
-# Obsidian workflow tools  
-/plugin install obsidian-workflow@cc-gtd
+# Obsidian workflow tools
+/plugin install obsidian@gtd-cc
 ```
 
 ### Browse Available Plugins
@@ -41,7 +41,7 @@ After adding the marketplace, install specific plugins:
 /plugin
 
 # List all available plugins from this marketplace
-/plugin marketplace list cc-gtd
+/plugin marketplace list gtd-cc
 ```
 
 
@@ -64,8 +64,8 @@ After adding the marketplace, install specific plugins:
 
 The project is organized as a marketplace with multiple focused plugins:
 
-- `plugins/github-code/` - GitHub workflow automation with commands
-- `plugins/obsidian-workflow/` - Obsidian integration for knowledge management (scaffolding)
+- `plugins/github/` - GitHub workflow automation with commands
+- `plugins/obsidian/` - Obsidian integration for knowledge management (scaffolding)
 - `.claude-plugin/` - Marketplace configuration
 - `references/docs/` - Reference documentation
 
@@ -98,5 +98,5 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on project structu
 
 **License:** MIT  
 **Maintainer:** Nikhil Maddirala  
-**Repository:** https://github.com/nikhilmaddirala/cc-gtd
+**Repository:** https://github.com/nikhilmaddirala/gtd-cc
 

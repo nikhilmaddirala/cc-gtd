@@ -1,7 +1,6 @@
 ---
 name: gh-build
 description: Autonomous agent that builds code from approved implementation plans or addresses review feedback
-model: sonnet
 ---
 
 ## Context

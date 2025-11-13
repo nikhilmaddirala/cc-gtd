@@ -1,17 +1,17 @@
-# Contributing to cc-gtd
+# Contributing to gtd-cc
 
-Thank you for your interest in contributing to the cc-gtd project! This guide explains the project structure, development workflow, and how to add new components.
+Thank you for your interest in contributing to the gtd-cc project! This guide explains the project structure, development workflow, and how to add new components.
 
 ## Project Structure
 
 ```
-cc-gtd/
+gtd-cc/
 ├── .claude-plugin/                 # Marketplace configuration
 │   ├── marketplace.json            # Lists all plugins in this marketplace
 │   └── plugin.json                 # Marketplace-level plugin manifest
 │
 ├── plugins/                        # Individual plugin directories
-│   ├── github-code/               # GitHub workflow automation plugin
+│   ├── github/               # GitHub workflow automation plugin
 │   │   ├── .claude-plugin/
 │   │   │   └── plugin.json        # Plugin manifest with components
 │   │   ├── commands/              # Interactive slash commands
@@ -31,13 +31,13 @@ cc-gtd/
 │   │   │       └── SKILL.md
 │   │   └── README.md
 │   │
-│   └── obsidian-workflow/         # Obsidian integration plugin
+│   └── obsidian/         # Obsidian integration plugin
 │       ├── .claude-plugin/
 │       │   └── plugin.json
 │       ├── commands/              # (future)
 │       ├── agents/                # (future)
 │       ├── skills/
-│       │   └── obsidian-workflow/
+│       │   └── obsidian/
 │       │       └── SKILL.md
 │       └── README.md
 │
@@ -121,7 +121,7 @@ Agents are autonomous workers that run without human interaction between approva
 
 ## 7-Stage Workflow Integration
 
-The cc-gtd project follows a 7-stage workflow. Each plugin component contributes to specific stages:
+The gtd-cc project follows a 7-stage workflow. Each plugin component contributes to specific stages:
 
 | Stage | Description | Components |
 |-------|-------------|-----------|
@@ -228,7 +228,7 @@ When submitting a PR:
 
 Example PR:
 ```
-feat: add obsidian-capture command to obsidian-workflow plugin
+feat: add obsidian-capture command to obsidian plugin
 
 - Added `/ob-capture` command for capturing web content to Obsidian
 - Created obsidian-integration skill with note creation patterns
@@ -243,4 +243,4 @@ feat: add obsidian-capture command to obsidian-workflow plugin
 - Open an issue for clarification or suggestions
 - Look at recent commits for current conventions
 
-Thank you for contributing to cc-gtd!
+Thank you for contributing to gtd-cc!
