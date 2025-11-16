@@ -1,0 +1,15 @@
+{
+  "name": "web-research",
+  "version": "0.1.0",
+  "description": "Web research tools for content crawling, analysis, and extraction",
+  "author": {
+    "name": "Nikhil Maddirala"
+  },
+  "commands": [],
+  "agents": [],
+  "skills": [
+    "./skills/crawl4ai",
+    "./skills/gemini-headless",
+    "./skills/web-crawler"
+  ]
+}

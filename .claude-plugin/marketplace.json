@@ -5,7 +5,7 @@
   "name": "gtd-cc",
   "version": "0.1.0",
   "metadata": {
-    "description": "Getting Things Done system for Claude Code with GitHub workflow automation and Obsidian integration"
+    "description": "Getting Things Done system for Claude Code with GitHub workflow automation, Obsidian integration, and web research capabilities"
   },
   "plugins": [
     {
@@ -17,6 +17,11 @@
       "name": "obsidian",
       "description": "Obsidian integration for task management and knowledge capture",
       "source": "./plugins/obsidian"
+    },
+    {
+      "name": "web-research",
+      "description": "Web research tools for content crawling, analysis, and extraction",
+      "source": "./plugins/web-research"
     }
   ]
 }

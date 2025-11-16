@@ -6,8 +6,12 @@
     "name": "Nikhil Maddirala"
   },
   "commands": [],
-  "agents": [],
+  "agents": [
+    "./agents/content-extraction-agent.md",
+    "./agents/options-analysis-agent.md"
+  ],
   "skills": [
-    "./skills/obsidian"
+    "./skills/obsidian-gtd",
+    "./skills/options-analysis-skill"
   ]
 }
