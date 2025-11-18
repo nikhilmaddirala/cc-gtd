@@ -22,6 +22,11 @@
       "name": "web-research",
       "description": "Web research tools for content crawling, analysis, and extraction",
       "source": "./plugins/web-research"
+    },
+    {
+      "name": "documentation",
+      "description": "GitHub project documentation generation and maintenance using three-layer model with initialization, structure, maintenance, and audit workflows",
+      "source": "./plugins/documentation"
     }
   ]
 }

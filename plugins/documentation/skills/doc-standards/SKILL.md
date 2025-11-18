@@ -1,0 +1,344 @@
+---
+name: doc-standards
+description: GitHub project documentation implementation and maintenance based on three-layer model with Best README Template patterns
+---
+
+# Documentation Standards Skill
+
+Comprehensive documentation guidance for GitHub projects using a scalable three-layer model that grows naturally with project complexity.
+
+## About This Skill
+
+This skill implements a unified, lightweight, and scalable documentation system based on the Best README Template approach. It provides guidance for structuring, evolving, and maintaining repository documentation across projects of all sizes while keeping maintenance overhead minimal.
+
+The skill covers:
+
+- The purpose of each documentation layer
+- How documentation evolves as projects grow
+- Folder and file structure conventions
+- Maintenance rules for long-term health
+- Templates and checklists for consistency
+
+## Core Documentation Philosophy
+
+Documentation should scale naturally with project complexity using three layers:
+
+```
+README.md          → Entry point (primary door)
+Directory READMEs  → Local context (module explanations)
+/docs/             → Deep dives (multi-page content)
+```
+
+This three-layer model prevents:
+
+- README bloat from too much detail
+- Scattered context across files
+- Confusion about where documentation lives
+- Unnecessary duplication
+
+## Key Principles
+
+1. The README is the front door - keep it simple and user-focused
+2. Directory docs localize complexity to relevant modules
+3. Deep docs in /docs handle multi-page explanations
+4. Each fact lives in only one place - no duplication
+5. Documentation grows downward as needed - start minimal
+6. Maintenance is continuous, not occasional - tie doc updates to PRs
+7. Version documentation as the project evolves
+8. Documentation rot is prevented through quarterly reviews
+
+## Documentation Lifecycle: Three Phases
+
+Choose your documentation approach based on project stage:
+
+**Phase 1 — Small Project**
+- Single README.md
+- Solo developer or simple scripts
+- Early MVP stage
+
+**Phase 2 — Medium Project**
+- README.md + directory READMEs
+- 2+ modules with separate concerns
+- Contributors need local context
+
+**Phase 3 — Growing Project**
+- README.md + directory READMEs + /docs
+- Complex architecture or multiple tutorials
+- Internal and external documentation needs
+
+## Documentation Components
+
+### Root README.md
+
+The primary entry point for all users and contributors.
+
+Must include:
+- Project title and short description
+- Badges (optional)
+- Table of contents (if long)
+- About / Motivation section
+- Built with / Tech stack
+- Getting started (install, usage)
+- Roadmap (optional)
+- Contributing, License, Contact sections
+
+Guidelines:
+- Keep it clear, short, and actionable
+- User-focused, not internal-focused
+- Link to deeper docs in /docs rather than including them
+- Update on every PR that changes behavior
+
+### Directory READMEs
+
+Add a README inside any directory where context is needed.
+
+Each directory README should answer:
+- What lives in this folder?
+- How is it organized?
+- How to extend or modify this component?
+- Any conventions, constraints, or common pitfalls?
+- Cross-references to related documentation
+
+Guidelines:
+- Keep them short and focused
+- Avoid duplication with root README or /docs
+- Update when structure or purpose changes
+
+### /docs Folder
+
+Holds documentation that is too large or detailed for the main README.
+
+Use /docs for:
+- Architecture diagrams and design decisions
+- Configuration reference
+- API reference
+- Tutorials and walkthroughs
+- Contribution guidelines
+- Design notes and rationale
+- Versioning information (optional)
+- Troubleshooting guides
+
+Typical /docs structure:
+```
+/docs
+  index.md
+  architecture.md
+  configuration.md
+  api_reference.md
+  tutorials/
+    getting-started.md
+    advanced-usage.md
+  diagrams/
+    architecture.excalidraw
+  guides/
+    contributing.md
+    troubleshooting.md
+```
+
+## Maintenance Framework
+
+Documentation stays healthy when maintained systematically:
+
+### On Every PR
+
+- [ ] Update relevant docs (README, folder docs, or /docs)
+- [ ] Remove outdated content instead of patching around it
+- [ ] Link instead of duplicating information
+- [ ] Ensure examples still work with the changes
+
+### Release Checklist
+
+- [ ] README matches current behavior
+- [ ] Configuration table or reference up to date
+- [ ] Important changes reflected in architecture or API docs
+- [ ] New features documented in appropriate layer
+- [ ] Breaking changes clearly noted
+
+### Quarterly Sweep
+
+- [ ] Delete stale or obsolete pages
+- [ ] Update diagrams to match current architecture
+- [ ] Trim README back to essentials
+- [ ] Ensure directory READMEs reflect real structure
+- [ ] Fix broken cross-references
+- [ ] Update version numbers and dates
+
+## Documentation Length Guidelines
+
+Target lengths for different document types to guide compression and identify bloat:
+
+### README.md
+
+- **Target:** 200-500 lines
+- **Purpose:** Entry point, quick start, links to deeper docs
+- **Triggers Phase 2→3 transition:** If >500 lines, content belongs in /docs
+- **Compress if:** >400 lines by moving sections to /docs
+
+### Directory READMEs
+
+- **Target:** 30-80 lines
+- **Purpose:** Local context, structure explanation, how to extend
+- **Too long if:** >100 lines (over-documenting local context)
+- **Compress if:** Explanations can be shortened or moved to parent /docs
+
+### /docs Main Index
+
+- **Target:** 50-150 lines
+- **Purpose:** Navigation hub, links to sections
+- **Too long if:** >200 lines (should be navigation, not content)
+
+### Tutorial/Guide Pages
+
+- **Target:** 500-2000 lines (can be longer if multi-step)
+- **Purpose:** Step-by-step instructions with examples
+- **Compress if:** Removing redundant steps/examples doesn't change outcomes
+
+### API Reference
+
+- **Target:** 100-300 lines (or 1-2 lines per API function)
+- **Purpose:** Function signatures, parameters, errors
+- **Compress if:** Removing explanations, keeping only contracts
+
+### Architecture Document
+
+- **Target:** 200-500 lines
+- **Purpose:** System design, components, data flow, deployment
+- **Compress if:** Consolidating descriptions, removing detailed diagrams
+
+### Configuration Reference
+
+- **Target:** 50-200 lines (table format preferred)
+- **Purpose:** List all options, defaults, constraints
+- **Compress if:** Removing explanations, keeping only option table
+
+These targets are guidelines, not hard limits. Compress when:
+- Document exceeds its type's upper limit
+- Team needs quick-reference version
+- Original will remain as detailed version
+
+## Structuring Your Documentation
+
+Follow these principles when organizing documentation across layers:
+
+### Basic Structure Rules
+
+- **One fact, one place** - Never duplicate information. Link to the authoritative source instead.
+- **Layer by audience** - README for everyone, directory READMEs for module maintainers, /docs for deep dives
+- **README should be short** - If README exceeds 500 lines, move content to /docs
+- **Directory READMEs explain local context** - Don't repeat what's in README, add module-specific information
+- **Link between layers** - Create clear navigation from README to /docs and between layers
+
+### When to Move Content Between Layers
+
+| Situation | Action |
+|-----------|--------|
+| Installation in README + /docs | Keep in /docs/tutorials/getting-started.md, link from README |
+| Configuration listed in README + /docs | Keep in /docs/configuration.md, link from README |
+| Architecture explained in README | Move to /docs/architecture.md, reference from README |
+| Large README (>400 lines) | Move sections to /docs, keep summary in README |
+| Directory structure explained in README | Move to relevant directory README.md |
+
+### Adding Directory READMEs
+
+Create a README.md in any directory where context is needed:
+
+- Explain what the directory contains
+- Show the structure/organization
+- Describe how to extend it
+- Link to related documentation
+
+Standard directory README structure:
+
+```markdown
+# [Folder Name]
+
+Brief description of what this folder contains.
+
+## Structure
+
+- Item A — description
+- Item B — description
+
+## How to Extend
+
+[Instructions for adding new content]
+
+## Related Documentation
+
+- [Architecture](../../docs/architecture.md)
+- [API Reference](../../docs/api-reference.md)
+```
+
+## Workflows in This Skill
+
+This skill includes detailed workflows for:
+
+- **initialization.md** - Initialize documentation structure and choose your phase
+- **update-docs.md** - Update documentation when code changes or before releases
+- **maintenance.md** - Implement systematic maintenance and audit documentation health
+- **compress.md** - Create information-dense condensed versions of documentation for quick reference
+
+## Success Criteria
+
+A well-maintained documentation system:
+
+- README is the clear entry point, not overwhelming
+- Directory READMEs make local context obvious
+- /docs is organized and cross-referenced
+- No information duplicated across layers
+- Updates are tied to code changes
+- Quarterly reviews keep docs fresh
+- New contributors can navigate easily
+- Links work correctly (no dead references)
+
+## Integration Points
+
+This skill works with:
+
+- GitHub workflow plugin - Documentation updates on PRs
+- Knowledge management systems - Obsidian integration possible
+- Project planning - Documentation as part of definition of done
+
+## Quick Reference
+
+### When to Create Each Layer
+
+| Situation | Action |
+|-----------|--------|
+| Solo developer, simple project | README.md only |
+| 2+ modules, multiple contributors | Add directory READMEs |
+| Architecture needs explanation | Add /docs folder |
+| Tutorial content needed | Create /docs/tutorials |
+| Configuration reference needed | Add /docs/configuration.md |
+| Architecture diagram needed | Add /docs/diagrams |
+
+### Naming Conventions
+
+- README.md - Standard name for visibility
+- Docs filenames reflect goals - configuration.md, api_reference.md, getting-started.md
+- Directory names are descriptive and consistent
+- Use kebab-case for multi-word filenames
+- Organize by user goals, not internal structure
+
+### Common Anti-Patterns to Avoid
+
+- README bloat (everything in one file)
+- Duplication across README, folder docs, and /docs
+- Outdated information left in place
+- Links to non-existent files
+- No table of contents when README is long
+- Directory docs that don't explain purpose
+- Inconsistent formatting or structure
+- "Will document later" (document as you code)
+
+## Next Steps
+
+Use the documentation plugin commands and agents to:
+
+1. **Initialize** - `/doc-init` to set up documentation for your project
+2. **Update** - `/doc-update` when code changes require doc updates
+3. **Audit** - `/doc-audit` to find problems and gaps in existing documentation
+4. **Generate** - Use doc-generator-agent for batch documentation creation
+5. **Review** - Use doc-auditor-agent for comprehensive documentation analysis
+
+Detailed procedures for each are available in the workflow files within this skill.
