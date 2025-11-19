@@ -49,19 +49,19 @@ This three-layer model prevents:
 
 ## Documentation Lifecycle: Three Phases
 
-Choose your documentation approach based on project stage:
+Choose your documentation approach based on project stage (this should be explicitly called out in the root README):
 
-**Phase 1 — Small Project**
+Single README
 - Single README.md
 - Solo developer or simple scripts
 - Early MVP stage
 
-**Phase 2 — Medium Project**
+Multiple READMEs
 - README.md + directory READMEs
 - 2+ modules with separate concerns
 - Contributors need local context
 
-**Phase 3 — Growing Project**
+READMEs + docs (rarely use)
 - README.md + directory READMEs + /docs
 - Complex architecture or multiple tutorials
 - Internal and external documentation needs
@@ -135,6 +135,28 @@ Typical /docs structure:
     troubleshooting.md
 ```
 
+### CONTRIBUTING.md Evolution
+
+Contribution guidelines evolve with your project documentation:
+
+#### Phase 1: Single README
+- Include "Contributing" section in main README.md
+- Cover basic guidelines: issue reporting, PR process, code style
+- Keep it concise and focused on immediate contributor needs
+
+#### Phase 2: Multiple READMEs
+- Maintain Contributing section in main README.md
+- Add module-specific contribution guidance in directory READMEs
+- Reference main contributing guidelines from directory docs
+
+#### Phase 3: READMEs + docs
+- Move detailed contributing guidelines to `/docs/guides/contributing.md`
+- Keep brief "Contributing" section in main README with link to detailed guide
+- Include comprehensive development setup, testing, and review processes
+- Add contribution templates and examples in `/docs/guides/`
+
+This evolutionary approach prevents contribution guideline fragmentation while scaling guidance appropriately with project complexity.
+
 ## Maintenance Framework
 
 Documentation stays healthy when maintained systematically:
@@ -176,40 +198,10 @@ Target lengths for different document types to guide compression and identify bl
 
 ### Directory READMEs
 
-- **Target:** 30-80 lines
+- **Target:** 100 - 300 lines
 - **Purpose:** Local context, structure explanation, how to extend
 - **Too long if:** >100 lines (over-documenting local context)
 - **Compress if:** Explanations can be shortened or moved to parent /docs
-
-### /docs Main Index
-
-- **Target:** 50-150 lines
-- **Purpose:** Navigation hub, links to sections
-- **Too long if:** >200 lines (should be navigation, not content)
-
-### Tutorial/Guide Pages
-
-- **Target:** 500-2000 lines (can be longer if multi-step)
-- **Purpose:** Step-by-step instructions with examples
-- **Compress if:** Removing redundant steps/examples doesn't change outcomes
-
-### API Reference
-
-- **Target:** 100-300 lines (or 1-2 lines per API function)
-- **Purpose:** Function signatures, parameters, errors
-- **Compress if:** Removing explanations, keeping only contracts
-
-### Architecture Document
-
-- **Target:** 200-500 lines
-- **Purpose:** System design, components, data flow, deployment
-- **Compress if:** Consolidating descriptions, removing detailed diagrams
-
-### Configuration Reference
-
-- **Target:** 50-200 lines (table format preferred)
-- **Purpose:** List all options, defaults, constraints
-- **Compress if:** Removing explanations, keeping only option table
 
 These targets are guidelines, not hard limits. Compress when:
 - Document exceeds its type's upper limit
@@ -331,14 +323,34 @@ This skill works with:
 - Inconsistent formatting or structure
 - "Will document later" (document as you code)
 
-## Next Steps
-
-Use the documentation plugin commands and agents to:
-
-1. **Initialize** - `/doc-init` to set up documentation for your project
-2. **Update** - `/doc-update` when code changes require doc updates
-3. **Audit** - `/doc-audit` to find problems and gaps in existing documentation
-4. **Generate** - Use doc-generator-agent for batch documentation creation
-5. **Review** - Use doc-auditor-agent for comprehensive documentation analysis
-
 Detailed procedures for each are available in the workflow files within this skill.
+
+## Resources
+
+This skill includes reference materials and examples to help with documentation implementation:
+
+### [Best-README-Template](./resources/best-readme-template.md)
+
+An exact copy of the popular Best-README-Template from https://github.com/othneildrew/Best-README-Template. This is the complete, unmodified template that you can use as a starting point for your own README files.
+
+**This template includes:**
+- Professional badges and shields
+- Table of contents with collapsible sections
+- About the project section with built-with technologies
+- Getting started with prerequisites and installation
+- Usage examples section
+- Roadmap with checklist format
+- Contributing guidelines with workflow
+- License information
+- Contact details
+- Acknowledgments section
+- Reference-style links for clean markdown
+
+**How to use:**
+1. Copy the template content to your project's README.md
+2. Replace placeholder content with your project information
+3. Update badges, links, and references to point to your repository
+4. Remove sections you don't need (keep it minimal!)
+5. Follow the three-layer model principles when adapting
+
+This template demonstrates excellent documentation practices and serves as a concrete example of the documentation principles taught in this skill.
