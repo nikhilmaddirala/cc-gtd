@@ -47,7 +47,7 @@ Every issue progresses through these stages:
 **1. Issue creation**
 - Trigger: `/gh-issue "description"` command
 - Label: → `needs planning`
-- User brain dumps task, AI creates formatted issue
+- User provides request, AI captures it as lightweight issue with basic categorization
 
 **2. Planning**
 - Trigger: `/gh-plan <issue-number>` command
@@ -107,8 +107,8 @@ Issues serve as the single source of truth, with labels tracking workflow state.
 | Stage | Label | What Happens | Implementation Status |
 |-------|-------|--------------|----------------------|
 | 0. Repository initialization | none | AI sets up labels, issue templates, PR templates, branch protection rules | **Manual**: Create repo, configure settings<br>**Command**: `/gh-repo` 📋<br>**Agent**: Repo init agent 📋 |
-| 1. Issue creation | → `needs planning` | User provides task description; AI creates formatted issue with details | **Manual**: Create issue in GitHub UI<br>**Command**: `/gh-issue "description"` ✅<br>**Agent**: Issue creation agent 📋 |
-| 2. Planning | `needs planning` → `needs implementation` or `needs plan approval` | AI researches codebase and approaches; creates implementation plan with options; self-assesses confidence; if confident auto-approves to `needs implementation`, otherwise sets `needs plan approval` for human review | **Manual**: Research and write plan in issue comments<br>**Command**: `/gh-plan <issue>` ✅<br>**Agent**: Planning agent 📋 |
+| 1. Issue creation | → `needs planning` | User provides task description; AI captures lightweight issue with basic categorization | **Manual**: Create issue in GitHub UI<br>**Command**: `/gh-issue "description"` ✅<br>**Agent**: Issue creation agent 📋 |
+| 2. Planning | `needs planning` → `needs implementation` or `needs plan approval` | AI conducts comprehensive analysis: requirement clarification, scoping, repository research, feasibility assessment, and creates detailed implementation plan; self-assesses confidence; if confident auto-approves to `needs implementation`, otherwise sets `needs plan approval` for human review | **Manual**: Research and write plan in issue comments<br>**Command**: `/gh-plan <issue>` ✅<br>**Agent**: Planning agent 📋 |
 | 3. Plan approval (conditional) | `needs plan approval` → `needs implementation` or `needs planning` | Human reviews AI's plan and reasoning; approves by changing label to `needs implementation`, or requests revision by changing to `needs planning` with feedback | **Manual**: Review plan, change label in GitHub UI<br>**Command**: `/gh-approve-plan <issue>` 📋<br>**Agent**: N/A (requires human judgment) |
 | 4. Implementation | `needs implementation` → `in review` | AI creates branch `issue-<num>-<slug>`; sets up worktree; implements code with conventional commits; creates draft PR linked to issue; runs tests | **Manual**: Write code, create PR manually<br>**Command**: `/gh-build <issue>` 📋<br>**Agent**: Build agent 📋 |
 | 5. Code review | `in review` → `ready for approval` | AI reviews code for style, security, completeness, test coverage; adds review comments; marks PR as ready for review | **Manual**: Review code manually in GitHub<br>**Command**: `/gh-review <issue>` 📋<br>**Agent**: Review agent 📋 |

@@ -1,10 +1,10 @@
 ---
-description: Create a well-structured GitHub issue following repository conventions
+description: Create a lightweight GitHub issue to capture user requests
 ---
 
 ## Overview
 
-Transform user requests into well-documented GitHub issues with clear problem statements, acceptance criteria, context, and appropriate labels.
+Quickly capture user requests as GitHub issues with basic categorization. All detailed planning and scoping will be handled by the planning workflow.
 
 ## Context
 
@@ -15,17 +15,11 @@ gh label list
 
 # Issue templates (if any)
 ls -la .github/ISSUE_TEMPLATE/ 2>/dev/null || echo "No issue templates found"
-
-# Recent issues for style reference
-gh issue list --limit 5 --state all
-
-# Current project boards
-gh project list 2>/dev/null || echo "No project boards found"
 ```
 
 ## Your Task
 
-**Goal**: Create a well-documented GitHub issue following repository conventions.
+**Goal**: Create a lightweight GitHub issue that captures the user's request.
 
 **User's initial request**: $ARGUMENTS
 
@@ -34,69 +28,52 @@ gh project list 2>/dev/null || echo "No project boards found"
 
 ### Process
 
-1. **Understand the request**
-   - Chat iteratively with the user to clarify details
-   - Determine issue type (feature, bug, docs, refactor, or other)
-   - Understand scope, constraints, and dependencies
+1. **Quick clarification**
+   - Get a clear problem statement from the user
+   - Determine basic issue type (feature, bug, docs, refactor, or other)
+   - Keep clarification minimal - just enough to understand the request
 
 2. **Check for issue templates**
    - If `.github/ISSUE_TEMPLATE/` exists, offer available templates to user
    - Allow user to choose a template or create custom issue
-   - If no templates, use structured format below
+   - If no templates, use lightweight format below
 
-3. **Gather complete information**
-   Ask about:
-   - **Problem/Goal**: What needs to be done and why?
-   - **Context**: Any relevant background, links, or constraints
-   - **Acceptance Criteria**: How will we know it's complete?
-   - **Dependencies**: Related issues, blockers, or prerequisites
-   - **Scope**: What's in scope vs. out of scope (if applicable)
-
-4. **Structure the issue**
-   Use this format (adapt based on templates or repo conventions):
+3. **Basic issue structure**
+   Use this lightweight format (adapt based on templates or repo conventions):
    ```markdown
-   ## Problem/Goal
-   [Clear description of what needs to be done and why]
+   ## Request
+   [User's request or problem statement in their own words]
 
-   ## Context
-   [Relevant background, constraints, related work]
-
-   ## Acceptance Criteria
-   - [ ] [Specific, testable criterion]
-   - [ ] [Another criterion]
-
-   ## Additional Notes
-   [Dependencies, scope boundaries, open questions]
+   ## Basic Information
+   - **Type**: [feature/bug/docs/refactor/other]
+   - **Additional context**: [Any immediate context provided by user]
    ```
 
-5. **Apply labels (if available)**
+4. **Apply basic labels (if available)**
    - Check `gh label list` output to see what labels exist
-   - Suggest relevant labels based on issue type and content
-   - Common patterns: type labels (feature, bug, docs) and status labels
-   - If user has custom labels or no labels, that's fine - labels are optional
+   - Apply `needs planning` label if available
+   - Apply basic type label based on issue type (feature, bug, docs, etc.)
 
-6. **Create the issue**
+5. **Create the issue**
    - Use `gh issue create` with:
-     - Clear, descriptive title
-     - Well-structured body following template/format
-     - Labels (if user wants them and they exist)
-   - Link to project board if configured
+     - Clear title based on user request
+     - Lightweight body with request and basic info
+     - `needs planning` label (if available)
    - Return issue URL and number
 
 ## Guidelines
 
-- Ensure the issue contains sufficient detail that someone could implement it
-- Ask clarifying questions when user input is vague or incomplete
-- Follow existing repository conventions (check recent issues for style)
-- If multiple approaches exist, note them briefly for consideration
-- Keep issue focused and actionable
-- Adapt format to match repository patterns (some repos prefer different structures)
+- **Focus on capture**: Your job is to capture the request, not plan it
+- **Minimal clarification**: Only ask what's needed to understand the request
+- **No scoping**: Don't ask about scope, dependencies, or implementation approaches
+- **No feasibility assessment**: Don't evaluate if/how something should be implemented
+- **Fast turnaround**: The goal is quick issue creation without extensive discussion
+- **Apply `needs planning` label**: This signals the next stage should handle detailed analysis
 
 ## Success Criteria
 
-- ✅ Issue title is clear and descriptive
-- ✅ Issue body includes problem/goal, context, and acceptance criteria
-- ✅ User has provided necessary details or clarifications have been gathered
-- ✅ Issue follows repository conventions and templates (if applicable)
-- ✅ Appropriate labels have been applied
-- ✅ Issue is created and URL is shared with user
+- ✅ Issue title clearly captures the user's request
+- ✅ Issue body contains the user's request and basic categorization
+- ✅ Issue has `needs planning` label applied (if available)
+- ✅ Issue is created quickly without extensive planning discussion
+- ✅ Issue URL and number are shared with user

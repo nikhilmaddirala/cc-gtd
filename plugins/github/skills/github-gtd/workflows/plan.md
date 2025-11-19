@@ -50,35 +50,69 @@ find . -maxdepth 2 -type f -name "*.md" | head -20
 ### Process
 
 1. **Understand the Issue**
-   - Read and summarize the requirement
-   - Ask clarifying questions if ambiguous
+   - Read and summarize the requirement from the lightweight issue
+   - Ask clarifying questions if the request is ambiguous or incomplete
+   - Define the problem statement and goals clearly
 
-2. **Research Codebase**
+2. **Detailed Requirement Analysis**
+   Gather and clarify:
+   - **Problem/Goal**: What exactly needs to be done and why it matters
+   - **Acceptance Criteria**: How will we know this is complete and successful
+   - **Context**: Relevant background, constraints, related work, or links
+   - **Dependencies**: Related issues, blockers, or prerequisites
+   - **Scope**: What's definitively in scope vs. out of scope
+   - **Constraints**: Technical, time, or resource constraints
+
+3. **Research Codebase**
    - Explore existing architecture and patterns that could be reused
    - Understand naming and structural conventions
+   - Check for similar implementations that can inform the approach
+   - Identify areas where the change will impact existing code
 
-3. **Research External Options (If Applicable)**
+4. **Repository Convention Analysis**
+   - Analyze recent issues and pull requests for style patterns
+   - Check existing documentation for guidelines and standards
+   - Understand testing conventions and requirements
+   - Identify any repository-specific processes or standards
+
+5. **Research External Options (If Applicable)**
    - If multiple significant approaches exist, compare alternatives
-   - Document key tradeoffs
+   - Document key tradeoffs and implementation considerations
+   - Consider third-party libraries, frameworks, or tools
+   - Evaluate long-term maintainability and scalability implications
 
-4. **Develop Implementation Approach**
+6. **Technical Feasibility Assessment**
+   - Evaluate implementation complexity and estimated effort
+   - Identify potential risks or blockers
+   - Consider testing requirements and validation approaches
+   - Assess if the implementation approach is technically sound
+
+7. **Develop Implementation Approach**
    - Define the technical approach and rationale
-   - List files to create/modify
-   - Outline implementation sequence
+   - List specific files to create/modify
+   - Outline detailed implementation sequence
+   - Consider integration points and impacts on existing functionality
+   - Plan for testing, documentation, and validation
 
-5. **Post Plan**
+8. **Post Plan**
    - Create plan comment with structured format (see below)
    - Update issue label from "needs planning" to "needs plan approval"
 
 ### Guidelines
 
-- **Research before deciding**: Understand the codebase and options. This prevents wasted implementation effort.
+- **Comprehensive analysis**: Since issue creation is now lightweight, you must conduct thorough requirement gathering, scoping, and analysis.
+
+- **Research before deciding**: Understand the codebase architecture, patterns, conventions, and options. This prevents wasted implementation effort.
 
 - **Detail for autonomous execution**: The gh-build agent will execute this plan independently. Be specific enough to avoid ambiguity.
 
-- **Follow repository conventions**: Adapt to existing code style and architecture patterns.
+- **Follow repository conventions**: Research and adapt to existing code style, architecture patterns, testing standards, and documentation requirements.
 
-- **Ask clarifying questions**: Get alignment early if the issue is ambiguous or complex.
+- **Ask clarifying questions**: Get alignment early on requirements, scope, dependencies, and technical approach if the issue is ambiguous or complex.
+
+- **Consider all aspects**: Analyze technical feasibility, risks, testing requirements, documentation needs, and integration impacts.
+
+- **Repository context gathering**: Analyze recent issues, pull requests, and documentation to understand project standards and processes.
 
 ## Plan Structure (Post as Issue Comment)
 
@@ -114,10 +148,14 @@ After posting the plan:
 
 ## Success Criteria
 
-- ✅ Issue has been thoroughly understood and clarified
-- ✅ Codebase research completed (architecture, patterns, conventions)
+- ✅ Issue requirement thoroughly understood with detailed clarification completed
+- ✅ Comprehensive scope and boundary analysis completed (in scope vs. out of scope)
+- ✅ Dependencies, constraints, and acceptance criteria clearly defined
+- ✅ Repository conventions researched and understood (patterns, standards, processes)
+- ✅ Codebase research completed (architecture, patterns, conventions, similar implementations)
+- ✅ Technical feasibility assessed (complexity, risks, blockers, testing requirements)
 - ✅ Options analyzed and documented (if multiple approaches exist)
 - ✅ Implementation plan posted on issue with required structure:
   - Summary, Technical Approach, Files to Create/Modify, Implementation Steps, Options (if applicable)
-- ✅ Plan is detailed enough for autonomous execution
+- ✅ Plan is detailed enough for autonomous execution by gh-build agent
 - ✅ Issue label updated from "needs planning" to "needs plan approval"
