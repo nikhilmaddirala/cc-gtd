@@ -4,7 +4,7 @@ description: Orchestrate sub-agents to manage various parts of the GitHub GTD wo
 
 ## Overview
 
-Coordinate specialized sub-agents to execute different stages of the GitHub GTD workflow. The orchestrator does not perform GitHub operations directly—instead, it manages agent invocation, tracks workflow state, and aggregates results across multiple stages.
+Coordinate specialized sub-agents to execute different stages of the GitHub GTD workflow. The orchestrator does not perform GitHub operations directly—instead, it manages agent invocation, tracks workflow state, and aggregates results across multiple stages. Spin up instances of gtd-github-agent to do the tasks needed.
 
 ## Context
 
