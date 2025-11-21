@@ -166,8 +166,6 @@ Detailed reference documentation and architectural guides.
 
 - **references/README.md** - Reference documentation index
 - **references/plugin-marketplaces.md** - Marketplace architecture
-- **references/Github-projects-ai-workflow.md** - GitHub workflow design
-- **references/ai-agents-README.md** - Agent architecture
 
 For step-by-step procedures, see skill documentation in each plugin instead.
 
