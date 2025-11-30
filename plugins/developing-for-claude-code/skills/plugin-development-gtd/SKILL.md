@@ -13,8 +13,9 @@ This skill provides expertise for developing Claude Code plugins following the g
 
 Use the appropriate workflow from the `workflows/` directory:
 
-- **create-new-plugin.md**: For building new gtd-cc marketplace plugins from scratch
+- **create-new-plugin.md**: For building new gtd-cc marketplace plugins from scratch. This workflow includes skill creation as its foundation step.
 - **update-existing-plugin.md**: For adding components to existing gtd-cc plugins
+- **create-new-skill.md**: For creating foundational skills with advanced skill-creator methodology. Primary use: referenced by create-new-plugin and update-existing-plugin workflows.
 - **validate-existing-plugins.md**: For checking plugin health before releases or contributions
 - **create-repo-plugin.md**: For creating repository-specific `.claude/` automation
 

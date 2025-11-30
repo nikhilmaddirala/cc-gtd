@@ -31,16 +31,18 @@ Follow these general guidelines when executing this workflow:
 Collect plugin information from user:
 - Plugin name (kebab-case)
 - Brief description of plugin purpose
-- Initial components needed (skill, command, agent)
+- **Domain expertise the foundational skill will provide** (this becomes the skill's core knowledge area)
+- Initial commands and agents needed (these will reference the skill)
 - Basic functionality requirements
 
-### 2. Create plugin structure using templates
+### 2. Create plugin structure and foundation skill
 
 Use templates from `../templates/` directory and directory structure patterns from `../references/common-patterns.md`:
 
 - Follow "Standard Plugin Directory Structure" pattern
 - Create plugin manifest using "Plugin Manifest Template"
-- Generate initial components using templates (skill, command, agent)
+- **Create the foundational skill first**: Use the create-new-skill workflow to build the core domain expertise skill for this plugin. This is the foundation layer that all commands and agents will reference.
+- Create initial command and agent components using templates that reference the new skill
 
 ### 3. Update marketplace registration
 
@@ -64,8 +66,10 @@ Verify that the plugin creation workflow completed successfully:
 - [ ] Plugin directory structure created correctly with all required subdirectories
 - [ ] Plugin manifest (.claude-plugin/plugin.json) is valid JSON with required fields
 - [ ] Plugin README is comprehensive and accurately describes the plugin
+- [ ] **Foundational skill created** using create-new-skill workflow with clear domain expertise
+- [ ] Skill is properly registered in plugin manifest and accessible
+- [ ] Initial command and agent components reference the foundational skill
 - [ ] Plugin is registered in marketplace manifest with unique name
-- [ ] Initial components (skill/command/agent) are created using templates
 - [ ] Plugin can be discovered via `/plugin list` command
 - [ ] All gtd-cc naming conventions are followed consistently
-- [ ] Plugin follows the layered architecture pattern correctly
+- [ ] Plugin follows the layered architecture pattern (skill foundation → commands/agents)
