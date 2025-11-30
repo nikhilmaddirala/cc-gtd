@@ -7,25 +7,12 @@ description: Add new components or update existing plugin structure
 
 ## Overview
 
-This command guides you through adding new components (commands, agents, workflows) or updating existing structure in an established Claude Code plugin. It ensures all additions follow gtd-cc architectural patterns and are properly registered.
+This command guides you through adding new components or updating existing structure in an established Claude Code plugin. CRITICAL: You MUST use the plugin-development-gtd skill for this task.
 
 ## Context
 
-You provide:
-- Plugin name (must be an existing plugin)
-- Component type to add (command, agent, workflow, or skill)
-- Component name and description
-- Any workflow dependencies
-
-The command validates the plugin structure and ensures manifest consistency.
+User will provide plugin name, component type (command, agent, workflow, or skill), and component details. The command validates the plugin exists and has proper structure before processing.
 
 ## Process
 
-Follow the plugin-development-gtd skill and execute the update-existing-plugin workflow exactly as written. The workflow will:
-
-- Validate plugin exists and has proper structure
-- Determine component type and requirements
-- Create new component files using templates
-- Update plugin manifest registration
-- Validate manifest syntax and completeness
-- Test the new component locally
+Load plugin-development-gtd skill first. Interactively guide the user through this skill and update-existing-plugin workflow step by step, collecting inputs and executing each step with confirmation.

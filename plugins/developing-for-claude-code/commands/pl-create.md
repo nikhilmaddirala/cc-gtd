@@ -7,25 +7,12 @@ description: Create new plugin with proper structure and marketplace registratio
 
 ## Overview
 
-This command guides you through creating a new Claude Code plugin with proper architectural structure, marketplace registration, and all required components (skills, commands, agents, workflows).
+This command guides you through creating a new Claude Code plugin with proper architectural structure and marketplace registration. CRITICAL: You MUST use the plugin-development-gtd skill for this task.
 
 ## Context
 
-You provide:
-- Plugin name and description
-- Plugin type and purpose
-- Initial components to include (skills, commands, agents)
-
-The command validates plugin naming conventions and ensures the plugin follows gtd-cc architectural patterns.
+User will provide plugin name, description, and initial component types. The command parses these inputs and validates plugin naming conventions against gtd-cc architectural patterns.
 
 ## Process
 
-Follow the plugin-development-gtd skill and execute the create-new-plugin workflow exactly as written. The workflow will:
-
-- Validate plugin name and structure
-- Create plugin directories with proper hierarchy
-- Initialize plugin manifest
-- Create initial skill with workflows
-- Register commands and agents
-- Validate all components
-- Test locally
+Load plugin-development-gtd skill first. Interactively guide the user through this skill and create-new-plugin workflow step by step, collecting inputs and executing each step with confirmation.
